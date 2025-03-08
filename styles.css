@@ -1,0 +1,229 @@
+/* General Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('/static/images/background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  filter: blur(7px); 
+  z-index: -1; 
+}
+
+/* Header (Common for both index and result) */
+header {
+  text-align: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+h1 {
+  margin: 0;
+  font-size: 3rem;
+  color: #ffcc00;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  place-items: center;
+  padding: 100px 50px;
+}
+
+/* Section Styling (Common for both index and result) */
+section {
+   display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center; 
+  max-width: 800px; 
+  padding: 30px; 
+  margin-bottom: 70px; 
+  background: rgba(0, 0, 0, 0.8); 
+  border-radius: 15px; 
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+    color: #ffcc00;
+}
+
+p {
+    margin-bottom: 25px;
+}
+
+form {
+display: flex;
+flex-direction: column;
+align-items: center;
+width: 100%;
+gap: 15px; /* Added spacing */
+}
+
+label {
+margin-top: 10px;
+margin-bottom: 5px;
+}
+
+input {
+width: 90%;
+padding: 12px;
+border-radius: 5px;
+border: 1px solid #ccc;
+}
+
+button {
+    padding: 10px 20px;
+    background: #ffcc00;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color .3s ease; /* Updated to use background-color */
+}
+
+button:hover {
+    background-color: #ffc107; /* Updated to use background-color */
+}
+
+input {
+    display: block;
+    margin: auto; /* Center input horizontally */
+    padding:10px; 
+    border-radius:5px; 
+    border :1px solid #ccc; 
+}
+
+/* Image Container Styling */
+.image-container {
+ width: 400px; 
+ height: 350px; 
+ overflow: visible; 
+ border-radius: 10px; 
+ box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); 
+ display:flex; 
+ justify-content:center; 
+ align-items:center; 
+}
+
+.image-container img {
+ width: auto; 
+ height:auto; 
+ max-height:400px; 
+ object-fit: cover; 
+ margin-top: -40px
+}
+
+/* Back Button Style */
+button.back {
+ background-color:#007bff; 
+ color:#fff; 
+ border-radius :5px; 
+ display:block; 
+ margin-top: 10px; 
+}
+
+/* Slider Styles */
+.image-slider {
+    position: relative;
+    max-width:600px; 
+    margin:auto; 
+}
+
+.slides {
+    display:flex; 
+    transition :transform .5s ease; 
+}
+
+figure {
+    min-width :100%; 
+}
+
+/* Navigation Buttons Styles */
+.slider-controls {
+    display:flex; 
+    justify-content:center; 
+    margin-top :20px; 
+}
+
+button.prev,
+button.next,
+button.back {
+    padding:10px; 
+    background-color :rgba(255,255,255,.8); 
+    border:none; 
+    cursor:pointer; 
+    margin :0 5px; 
+}
+
+button.prev,
+button.next {
+   position:absolute; 
+   top :50%; 
+   transform :translateY(-50%); 
+}
+
+button.prev { left :10px; } 
+button.next { right :10px; } 
+
+/* Forged Frames Container (if applicable)*/
+.forged-frames-container {
+   display:flex; 
+   flex-wrap :wrap; 
+   gap :15px; 
+   margin-top :20px; 
+   justify-content:center; 
+}
+
+.forged-frame {
+   width :100%; 
+   max-width :300px; 
+   border :2px solid #ccc; 
+   border-radius :5px; 
+   box-shadow :0px2px10px rgba(0,0,0,.1); 
+   overflow:hidden; 
+}
+
+/* Responsive Image Styles (if applicable)*/
+.responsive-image {
+   max-width:100%; 
+   height:auto;      
+}
+
+.report-button {
+display: block;
+margin: 20px auto;
+padding: 10px 20px;
+font-size: 16px;
+font-weight: bold;
+text-align: center;
+text-decoration: none;
+background-color: #dc3545; /* Bootstrap's danger color */
+color: #fff;
+border: 1px solid #dc3545;
+border-radius: 5px;
+cursor: pointer;
+transition: background-color 0.3s, color 0.3s;
+width: fit-content;
+}
+
+.report-button:hover {
+background-color: #c82333; /* Darker shade on hover */
+border-color: #bd2130;
+color: #fff;
+}
