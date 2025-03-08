@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clone Detection</title>
+  <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Clone Detection Tool</h1>
+  </header>
+  <main>
+
+      <!-- Image-to-Image Analysis Section -->
+      <section id="image-to-image">
+        <h2>Image-to-Image Analysis</h2>
+        <p>Upload two images to compare for clones</p>
+        <form action="/image-to-image" method="POST" enctype="multipart/form-data">
+          <label for="img1">Choose Image 1:</label>
+          <input type="file" id="img1" name="img1" accept="image/*" required>
+
+          <label for="img2">Choose Image 2:</label>
+          <input type="file" id="img2" name="img2" accept="image/*" required>
+
+          <button type="submit">Compare Images</button>
+        </form>
+      </section>
+
+      <!-- Image Analysis Section -->
+      <section id="image-analysis">
+        <h2>Image Analysis</h2>
+        <p>Upload a single image for anomaly detection</p>
+        <form action="/image-analysis" method="POST" enctype="multipart/form-data">
+          <label for="single_img">Choose Image:</label>
+          <input type="file" id="single_img" name="single_img" accept="image/*" required>
+
+          <button type="submit">Analyze Image</button>
+        </form>
+      </section>
+
+      <!-- Image URL Section -->
+      <section id="image-url">
+        <h2>Image URL Analysis</h2>
+        <p>Enter an image URL</p>
+        <form id="image-url-form" action="/image-url-analysis" method="post">
+          <label for="image_url">Image URL:</label>
+          <input type="text" id="image_url" name="image_url" placeholder="Enter image URL" required>
+          <button type="submit">Analyze Image</button>
+        </form>
+      </section>
+    <a href="https://cybercrime.gov.in/Webform/Crime_AuthoLogin.aspx" class="report-button">Report Cybercrime</a>
+  </main>
+  <script src="/static/js/script.js"></script>
+</body>
+</html>
