@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis Results</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+<header>
+    <h1>Analysis Results</h1>
+</header>
+<main>
+    <!-- Image-to-Image Comparison Results -->
+    {% if section == "image-to-image" %}
+        <section id="image-to-image-result" class="result-section">
+            <h2>Image-to-Image Comparison Results</h2>
+            <p><strong>SSIM Score:</strong> {{ ssim_score }}</p>
+            <div class="image-slider">
+                <div class="slides">
+                    <figure>
+                        <div class="image-container">
+                            <img src="{{ url_for('static', filename='results/ssim_diff.jpg') }}" alt="SSIM Difference" class="responsive-image">
+                        </div>
+                        <figcaption>SSIM Difference Image</figcaption>
+                    </figure>
+                    <figure>
+                        <div class="image-container">
+                            <img src="{{ url_for('static', filename='results/ela_img1.jpg') }}" alt="ELA Image 1" class="responsive-image">
+                        </div>
+                        <figcaption>ELA Image 1</figcaption>
+                    </figure>
+                    <figure>
+                        <div class="image-container">
+                            <img src="{{ url_for('static', filename='results/ela_img2.jpg') }}" alt="ELA Image 2" class="responsive-image">
+                        </div>
+                        <figcaption>ELA Image 2</figcaption>
+                    </figure>
+                </div>
+                <!-- Navigation Buttons -->
+                <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+                <button class="next" onclick="changeSlide(1)">&#10095;</button>
+            </div>
+            <!-- Back Button -->
+            <button class="back" onclick="window.location.href='/'">Back to Index</button>
+        </section>
+    {% endif %}
+
+    <!-- Image Analysis Result -->
+    {% if section == "image-analysis" %}
+        <section id="image-analysis-result" class="result-section">
+            <h2>Image Analysis Result</h2>
+            <div class="image-container">
+                <img src="{{ url_for('static', filename='results/ela_img.jpg') }}" alt="ELA Image" class="responsive-image">
+                <figcaption>ELA Analysis</figcaption>
+            </div>
+            <!-- Back Button -->
+            <button class="back" onclick="window.location.href='/'">Back to Index</button>
+        </section>
+    {% endif %}
+
+     <!-- Image URL Analysis Result -->
+     {% if section == "image-url-analysis" %}
+     <section id="image-url-analysis-result" class="result-section">
+         <h2>Image URL Analysis Result</h2>
+         {% if ela_img %}
+             <div class="image-container">
+                 <img src="{{ url_for('static', filename='results/ela_img.jpg') }}" alt="ELA Image from URL" class="responsive-image">
+                 <figcaption>ELA Analysis from URL</figcaption>
+             </div>
+         {% else %}
+             <p>Error generating ELA image from URL.</p>
+         {% endif %}
+         <!-- Back Button -->
+         <button class="back" onclick="window.location.href='/'">Back to Index</button>
+     </section>
+ {% endif %}
+</main>
+
+<!-- Include your JavaScript file -->
+<script src="/static/js/script.js"></script>
+</body>
+</html>
+
+
